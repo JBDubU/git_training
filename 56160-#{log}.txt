@@ -1,0 +1,44 @@
+56160
+
+3.08 56160 jw420k 10.1.15- changed log button to just #{Log} in nodes
+
+Issue:
+We are refactoring how we display logs, we are making it such that the ticket logs iframe will only display when a button is pressed.  This should make flows load more quickly.  However, because we do not consistently display ticket logs - very often we hide it already behind a button - we need to modify existing locations we are calling the #{Log} variable so that the UA doesn't have to put a button twice to display ticket logs
+
+Solution:
+The following flows have been identified as being potential workflows with the #{Log} variable being hidden behind a "show logs" button.  Modify each node currently displaying the log variable behind a "show logs" button (so it will be in a hidden div, a hidden table, or similar), such that the only thing display is simply the #{Log} variable.
+
+UA_SA_SUBMAN_SOIL_StandardStatus
+UA_SA_SUBMAN_SOIL_TechInboundCall
+UA_SA_SUBMAN_SOIL_VendorMeetFollowUp
+UA_SA_SUBMAN_SOIL_VerifyMDSRequirements
+UA_SA_SUBMAN_TicketClosureAndHandling
+UA_SA_SUBMAN_TicketLockHandling
+UA_SA_SUBMAN_TroubleTypeForms
+UA_SA_SUBMAN_V_TrblshtCnfgSftPhn
+UA_SA_SUBMAN_V_TroubleShoot_Config_SoftPhone
+UA_SA_SUBMAN_V_TroubleShoot_DroppedCalls
+UA_SA_SUBMAN_V_TroubleShoot_Replace_SIP_Phone
+------------------------
+
+Testing:
+jw420k_UnitTesting version 15
+---------------------------------
+Flows Modified:
+UA_SA_SUBMAN_SOIL_StandardStatus- Enter ETA,Enter Activity Scheduled Date
+
+UA_SA_SUBMAN_SOIL_TechInboundCall- Precall, Tech Call
+
+UA_SA_SUBMAN_SOIL_VerifyMDSRequirements- Info Available
+
+UA_SA_SUBMAN_TicketLockHandling- No Response From Tech
+
+UA_SA_SUBMAN_TroubleTypeForms- TroubleType Prefill, VT Genesys Form
+
+UA_SA_SUBMAN_V_TrblshtCnfgSftPhn- BD Verify License for Phone, BDUpdate response
+
+UA_SA_SUBMAN_V_TroubleShoot_Config_SoftPhone- BD Verify License for Phone,BDUpdate response
+
+UA_SA_SUBMAN_V_TroubleShoot_DroppedCalls- BD Call Samples, BD Update Call Samples
+
+UA_SA_SUBMAN_V_TroubleShoot_Replace_SIP_Phone- BDUpdate Reboot

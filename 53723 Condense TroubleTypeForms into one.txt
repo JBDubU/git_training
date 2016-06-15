@@ -1,0 +1,58 @@
+53723   000000205552128
+SASHA 3.08: BVoIP - Condense TroubleTypeForms into one single subflow
+
+Requester Name :MATT SOMERS - ms211k	 	Requester Phone:8475627326
+
+ISSUE:
+************************************************************************************************
+Currently TroubleTypeForms exist in 3 separate flows even though they are the exact same.
+We need these forms in a single place to allow for easier and more consistent change management.
+Also, can move specific task and BDET logic into the flow as well.
+Then only need to call the subflow where troubletype forms are required.
+
+http://knowitagent.it.att.com/eCustomer/KODSelfService/getKBContent.jsp?kbName=iGEMS&type=case&&refName=case25514060-32b8-11e3-4db7-000000000000 
+
+Merge:
+UA_SA_SUBMAN_BDET_StatusUpdateType
+UA_SA_PARENT_BDET_ReportNewTrouble
+CollectAOTSTicketCreateInfo
+
+SOLUTION:
+************************************************************************************************
+Created:
+UA_SA_SUBMAN_TroubleTypeForms
+
+TESTING:
+*************************************************************************************************
+
+IPLEX Form:
+
+#{ServiceLine=="BVOIP_MIS" || VoiceType=="IPLEX" || (str:countMatches(ServiceLine, "BVOIP") ge "1") || (str:countMatches(GroupNameUA, "BVOIP") ge "1") }
+
+VDNA Form:
+ServiceLine=="BVOIP_VDNA" || ServiceLine=="BVOIP_DSL
+
+VDNA Form:
+#{ServiceLine=="BVOIP_AVPN" || ServiceLine=="BVOIP_VCON"}
+
+SPP(BVOIP DATA_AVOIS)Form:
+#{ServiceLine=="BVOIP_AVOICS" && KIADBOR=="SPP"}
+
+IPBD Form:
+#{ServiceLine=="BVOIP_AVOICS" && KIADBOR=="IPDB"}
+
+MIS Form:
+ServiceLine=="MIS"
+
+VTGenesys Form:
+#{(IsVTGenesys=="Yes" || IsVT=="Yes")  &&  (str:countMatches(ParentWorkflow, "BDET") ge "1")}
+
+
+
+ASSET			Ticket#			Tasks			IETicket#
++++++++++++++++		+++++++++++++++		++++++++++++++		++++++++++++++++++		
+USATTSARLIL03R-		000000204683941
+			000000204684282
+			000000204684288								000000204684283 
+
+USPROMCHGIL05R-		

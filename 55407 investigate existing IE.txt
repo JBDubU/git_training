@@ -1,0 +1,27 @@
+55407
+
+Issue:
+Agents are getting a task where sasha will prompt  with verbiage "An existing IE ticket in a ready to close state has been detected and SASHA will now activate it back" . However , customer is either OK with tier 2 IE ticket updates or want to close the ticket. IE ticket in RTC catogary , In such cases we  dont need to  re-activate the IE ticket. We can put main ticket in either monitoring or close as per customer request. But we do not have that flexibility to  choose such option other than re-activating the IE ticket back. We need to tweak this with some more options eitehr monitor or close the case.
+
+Solution:
+IN looking at this, it looks liek we should be good to remove the call to US_SA_SUBMAN_ContestRTCIE from UA_SA_SUBAUTO_CheckIEandMainStatesBVOIPMIS
+
+1) Delete the call to the subflow.
+2) move the false signal of Xor_91357E67-71D5-4C75-AC74-CF2E3B544FC7 to point directly to the ToEnd GotoReference
+3) connect the true signal of that XOR to the IEStatus script node.
+
+Test using a ticket with an IE set to RTC to ensure that the UA is prompted with the proper status nodes.
+-----------------------------------------
+
+Testing:
+testing ticket#: 000000204686340 IE# 000000204686350
+		 000000204686365     000000204686368
+		 000000204686556     000000204686562
+		 000000204641842
+
+asset ID#: 12.252.173.146(on first three)
+
+
+---------------------------------
+Flows Modified:
+IEStatusUpdate - took out Xor_183F4339-5F9A-42BC-A620-DEEF0B4154B3 and connected true path to Xor_AAD71EF6-D3CE-4F12-9994-8F1700405421

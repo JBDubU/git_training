@@ -1,0 +1,49 @@
+54604   CORY MARTIN - cm103c	 	Requester Phone :5125196328
+
+Issue:
+SASHA 3.08: AWS - White Box/ DBView/ Dashboard Update Work
+
+Solution:
+1.)	Change the #{Dashboard} variable to #{DBView}
+2.)	Update any TSC_SA_DASHBOARD_UPDATE subflows to UA_SA_SUBMAN_DashboardDisplay subflow
+3.)	Change any text on display nodes which give agent commands to yellow box
+
+
+Perform the changes on the following flows:
+
+TSC_SA_LAYER1
+TSC_SA_LAYER1_AP
+TSC_SA_LAYER1_CIRCUIT
+TSC_SA_LAYER1_CIRCUITLOCATE
+TSC_SA_LAYER1_CIRCUITREBOOT
+TSC_SA_LAYER1_ENCLOSURE
+TSC_SA_LAYER1_END
+TSC_SA_LAYER1_INMD
+TSC_SA_LAYER1_NMD1
+TSC_SA_LAYER1_NMDREACHABILITY
+
+
+Updated Engineering Document:
+
+https://businesssolutions.web.att.com/sites/M5_DTI/Shared%20Documents/Team%20Area%20(Internal%20only)/Tools%20-%20SASHA/Requirements/3.08/54130%20-%20SASHA_AWS_uaagenttext.docx
+-----------------------------------------
+
+Testing:
+3.08-jw420k-54130-9/25/15-changed Dashboard to DBView, added uaagenttext class to text Changed subflow DashboardUpdate to DashboardDisplay
+
+
+---------------------------------
+Flows Modified:
+
+TSC_SA_LAYER1-changed Dashboard to DBView, added uaagenttext class to text and DashboardUpdate to DashboardDisplay
+TSC_SA_LAYER1_AP-changed Dashboard to DBView, added uaagenttext class to text
+TSC_SA_LAYER1_CIRCUIT-3.08-jw420k-54130-9/24/15-changed Dashboard to DBView, added uaagenttext class to text
+TSC_SA_LAYER1_CIRCUITLOCATE-3.08-jw420k-54130-9/24/15-changed Dashboard to DBView, added uaagenttext class to text
+TSC_SA_LAYER1_CIRCUITREBOOT-3.08-jw420k-54130-9/24/15 changed Dashboard to DBView, added uaagenttext class to text
+TSC_SA_LAYER1_ENCLOSURE-3.08-jw420k-54130-9/24/15-changed Dashboard to DBView, added uaagenttext class to text
+
+TSC_SA_LAYER1_END- 3.08-jw420k-54130-9/25/15-changed Dashboard to DBView, added uaagenttext class to text Changed subflow DashboardUpdate to DashboardDisplay
+
+TSC_SA_LAYER1_INMD-3.08-jw420k-54130-9/24/15-changed Dashboard to DBView, added uaagenttext class to text
+TSC_SA_LAYER1_NMD1-3.08-jw420k-54130-9/25/15-changed Dashboard to DBView, added uaagenttext class to text Changed subflow DashboardUpdate to DashboardDisplay
+TSC_SA_LAYER1_NMDREACHABILITY

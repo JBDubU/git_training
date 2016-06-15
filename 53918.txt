@@ -1,0 +1,31 @@
+<div id="accordion">
+<h3><a href="#"><b>Click Here For More Information<b>&nbsp;</b></a></h3>
+<div>
+#{HelpSpeedAndDuplex}
+</div>
+</div>
+
+
+3.07 - JW420K - 53918 - 09/14/15 - Changed #{HelpSpeedAndDuplex} to have new accordion div
+
+
+fixed:
+TSC_SA_CHECK_DHCP
+TSC_SA_THIRD_PARTY_WIFI - Workflow Editor
+TSC_SA_PHYSICALCONNECTIVITY_WIRED_WIN8_V2
+TSC_SA_PHYSICALCONNECTIVITY_WIRED_WINVISTA
+TSC_SA_PHYSICALCONNECTIVITY_WIRED_WIN7
+TSC_SA_PHYSICALCONNECTIVITY_WIRED_WIN10
+TSC_SA_PHYSICALCONNECTIVITY_WIRED_MACOSX-Workflow Editor
+TSC_SA_PHYSICALCONNECTIVITY_WIRED_WINXP
+
+
+
+
+
+
+
+
+
+
+

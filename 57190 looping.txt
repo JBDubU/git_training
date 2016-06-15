@@ -1,0 +1,53 @@
+57190
+
+
+Issue:
+
+SASHA 3.08: Looping occurring in UA_SA_SUBAUTO_GetAndVerifyTicketASYNC
+
+--------------------------------------------------------------------------------
+
+
+Solution:
+found that #{TicketNum} wasn't being updated to main ticket number #{TickNum}
+------------------------
+
+Testing:
+
+~~~~
+TEST STEPS:
+Here are the steps to get to this error:
+
+Inbound Call
+Phone Call
+Else
+Enter Contact Information
+Existing
+Ticket:  IE:  000000204686134
+ 	Will take you to:  UA_SA_SUBAUTO_GetAndVerifyTicketASYNC NODE:  PRovide_Main_Tick
+	[CONTINUE]
+
+Here is the looping.
+
+You have to use the IE ticket number in order to go down this path.
+
+
+~~~ ~~~ ~~~ ~~~ ~~~ ~~~ ~~~ ~~~ ~~~ ~~~ ~~~ 
+
+HOW TO CONFIRM RESULTS:
+
+No mo' loop. continues on to UA_SA_SUBMAN_RequestTypeDataCollection
+
+~~~ ~~~ ~~~ ~~~ ~~~ ~~~ ~~~ ~~~ ~~~ ~~~ ~~~ 
+
+FLOWS UPDATED:
+
+UA_SA_SUBASYNC_Request_GetAOTSTicketData
+~~~~
+
+ORIGINAL EXPRESSION: 
+In M5_getAOTSTicketInfo TicketNum was #{TicketNum}
+
+NEW EXPRESSION:
+now is #{TickNum}
+---------------------------------

@@ -1,0 +1,37 @@
+54962
+
+Issue:
+SASHA 3.08: Implement global CSS to redo buttons flow wide
+
+--------------------------------------------------------------------------------
+Solution:
+ Engineering Doc:
+uploaded to sharepoint
+https://businesssolutions.web.att.com/sites/M5_DTI/Shared%20Documents/Team%20Area%20(Internal%20only)/Tools%20-%20SASHA/Requirements/3.08/54962%20-%20redo%20buttons%20-%20global%20CSS%20-%20Engineering%20Document.docx
+--------------------------------------------------------------------------------
+Testing:
+LINK TO RECORDING;
+none
+
+SPECIFIC TEST STEPS:
+just ran through Sasha using different assets.
+
+TEST SETUP:
+
+n/a
+
+TEST STEPS:
+
+
+HOW TO CONFIRM RESULTS:
+just visually look at buttons and confirm they are all behaving the same.
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+FLOWS UPDATED:
+
+UA_SA_SUBAUTO_SASHACustomCSSjQuery- Css Button script
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Issues:
+ Cold Transfer Button in Transfer_ATTUID_0010 in UA_SA_SUBAUTO_IBCallTransferToSpecV2; looks off.
+ Conformation pop-up,yes and no buttons look funny.

@@ -1,0 +1,71 @@
+56182- ticket closure task
+
+Issue:
+SASHA: Investigate - Ticket Closure Task - Customer to Call Back Option Still routes to Ticket Resolution Screen
+
+MARTY SYERS - ms1378 Requester Phone :8135204500
+------------------------------------------------------
+Solution:
+During investigation found that CC000001 path lead to UA_SA_SUBAUTO_GetResSetAndCloseData which is the resolution screen that the UA described, this Subflow upon discussion with Pat Kepler seemed to be unnecessary to the flow so it was decided to remove Subflow. After rerunning the ticket and making it through the flow with no problems. I checked the log and the ticket was updated appropriately.
+
+CC0000001 Check Close GOLIATH Verify ticket is okay to close
+------------------------------------------------------
+
+Testing:
+
+TEST SETUP:
+
+Open the test tkt in UAT and set Ticket State= Active
+Load a task into taskmaster as below:
+Tkt: 000000204688083, 000000204689241
+Task_Type=CC0000001
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+TEST STEPS:
+Add task cc0000001 to ticket number 000000204688083
+Work a Specific Task Assigned by My Manager or Team Lead
+(continue)
+000000204688083
+(continue)
+Goliath has indicated that this ticket should be closed and requires customer's permission to close ticket.
+(continue)
+Select Device Region-(yes This device is in US)
+(continue)
+Select the contact has answered
+(continue)
+Is the customer providing maintenance window information?
+Select No
+(continue)
+(continue)
+Select-Contact will call back to confirm if it is ok to close the ticket.
+(continue)
+
+This is where the resolution parameter/text was asked to be entered.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Workflows entered:
+
+PorocessNotificationLCONCallbackNum
+Select_CBN_Def_Num_0010
+UA_SA_SUBMAN_GenericCustomerContact
+Call_Customer.001
+UA_SA_SUBMAN_GenericCustomerContact
+Validate_Contact_001_13D603DD-7B7D-4F8E-8A3A-B695EAF783DC
+UA_SA_SUBAUTO_GetResSetAndCloseData
+ResSetName_0010
+
+
+~~~ ~~~ ~~~ ~~~ ~~~ ~~~ ~~~ ~~~ ~~~ ~~~ ~~~ 
+
+HOW TO CONFIRM RESULTS:
+run through flow from start of task and you should no longer see the resolution page and original ticket is updated in AOTS log.
+
+
+~~~ ~~~ ~~~ ~~~ ~~~ ~~~ ~~~ ~~~ ~~~ ~~~ ~~~ 
+-------------------------------------------------------
+Flows Modified:
+
+UA_SA_SUBAUTO_GetResSetAndCloseData(Deleted these subflow nodes after CC0000001 RTGCode and CC0000001 RTGCode conected both to next script in flow)
+

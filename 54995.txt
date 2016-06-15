@@ -1,0 +1,61 @@
+ATTC_SA_SUBMAN_IE_Release10Features - fixed
+ATTC_SA_SUBMAN_IE_UserNotFound - no changes needed  
+ATTC_SA_SUBMAN_IE_WebClient - no changes needed
+ATTC_SA_SUBMAN_IE_WindowsClient - no changes needed
+ATTC_SA_SUBMAN_IE_WindowsClient_Features - no changes needed
+ATTC_SA_SUBMAN_IE_WindowsClient_InstallationIssues - no changes needed 
+ATTC_SA_SUBMAN_InstallationIssues - no changes needed
+ATTC_SA_SUBMAN_LyncIPTC - no changes needed
+ATTC_SA_SUBMAN_MACFeaturesandFunctionality - no changes needed
+ATTC_SA_SUBMAN_MACInstallationIssues - no changes needed
+ATTC_SA_SUBMAN_MisdirectedCall - fixed
+ATTC_SA_SUBMAN_NewAcctIns - no changes needed
+ATTC_SA_SUBMAN_OptOut - no parent
+ATTC_SA_SUBMAN_SettingupWebexEvent - fixed
+ATTC_SA_SUBMAN_Teleconferencing_Audio - no changes needed
+
+3.07 - 54995 - JW420k - 9/10/15 - Added {DBView}
+
+
+
+Asset: USMICHCHRDE01R
+
+
+Initial Problem Abstract: Data: Router, switch, supported device down
+===========================================================
+
+
+
+===========================================================
+
+
+
+==========================================
+===   GEMS Test/Dispatch/LCON Template   ===
+==========================================
+
+TEST AUTH:   Y
+DISP AUTH:   Y
+CPE POWER:   N
+
+PRIMARY LCON NAME:     John Doucette
+PRIMARY LCON PHONE:   2018122555
+PRIMARY LCON ACCESS HOURS:
+
+Premise Access Hours: 
+Monday:      09:00 To: 21:00
+Tuesday:    09:00 To: 21:00
+Wednesday:  09:00 To: 21:00
+Thursday:   09:00 To: 21:00
+Friday:      09:00 To: 21:00
+Saturday:   09:00 To: 21:00
+Sunday:      09:00 To: 21:00
+
+==========================================
+===   GEMS Test/Dispatch/LCON Template   ===
+==========================================
+
+
+ticket number I created:  Main Ticket Number 000000204680224
+
+
